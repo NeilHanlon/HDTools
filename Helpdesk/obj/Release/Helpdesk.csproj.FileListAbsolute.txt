@@ -1,0 +1,17 @@
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\bin\Release\Helpdesk.exe.config
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\bin\Release\checkPassExpire.ps1
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\bin\Release\resetPassword.ps1
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\bin\Release\Helpdesk.exe.manifest
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\bin\Release\Helpdesk.application
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\bin\Release\Helpdesk.exe
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\bin\Release\Helpdesk.pdb
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.CheckAccount.resources
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.Form1.resources
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.InfoWindow.resources
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.Properties.Resources.resources
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.resetPassword.resources
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.csproj.GenerateResource.Cache
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.exe.manifest
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.application
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.exe
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Release\Helpdesk.pdb

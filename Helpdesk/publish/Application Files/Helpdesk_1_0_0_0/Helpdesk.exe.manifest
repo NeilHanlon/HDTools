@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Helpdesk.exe" version="1.0.0.0" publicKeyToken="641b6bf0f117d7d4" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Helpdesk" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Helpdesk.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Management.Infrastructure" version="1.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Management.Infrastructure.Native" version="1.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="amd64" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Management.Automation" version="3.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Helpdesk.exe" size="9216">
+      <assemblyIdentity name="Helpdesk" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MtxE0aUGJWpvkE3JbdTYYj+2PYbAu1mN4Y+iDImuAJg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Helpdesk.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=WIT\hanlonn" issuerKeyHash="a8181abcd3941b8567d232e81ab545fc6b24b3a4" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/J38l6mBFD+sx7wqanMMmU6+v0ZxVDr1GU7RdM0go3E=</DigestValue></Reference></SignedInfo><SignatureValue>dl2fslWYfvUcTzwLe06Mk5bXWjKH0lXSaeRcoNhLHf3uCIvLrfcuisDH7h6bmwSzHH2Rj62xUvwGvNnXgvl5BEJVLpLfVEjE3kgi/CVmQ370b8NQJ8xmIMxdB/o5ZVUV3snY+k8FQ0N4FL2yvjOBHhBLVw1cBFq+YNYsF2tUNbI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0t9VzeQjur/4D0tbTow1Oi8EimHD5bZqlTH0bpw873EjcWaKSNgTb8sv36JpaBeY6h4pB8ewGVmN6/czpKM1eT07ZiZtzQkV6QB5qerj2nco2yNTsLj/OIX+IDkGCeyawIp/P6dD/+pkTRMQoSWNzzPfHUN7Mr35xCrcwqTfFDs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="71a320cd74d14e19f53a547146bfbe4e990c736a2abcc7ac3f1481a997fc9dfc" Description="" Url=""><as:assemblyIdentity name="Helpdesk.exe" version="1.0.0.0" publicKeyToken="641b6bf0f117d7d4" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=WIT\hanlonn</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>fLIlIJKS1kkHB76avZ9JfNiDOD0e5brVvOBxITK3wgM=</DigestValue></Reference></SignedInfo><SignatureValue>xRxQ2GYU/EvAU1E6sDwMFm0RDkP/XlTeg7Al2oQdau4g1Gf72RnTtG+/1gyFzrn2f0mHpvxrJsIMXqczqrgYv/dVFnsGFsDSqM76TFqy9q+juDyYaI3QRBLIOP89bmArP3kLUtX4IyNYjEOYTIZxpa/2hFBCglYXbLm2J9/B9x8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0t9VzeQjur/4D0tbTow1Oi8EimHD5bZqlTH0bpw873EjcWaKSNgTb8sv36JpaBeY6h4pB8ewGVmN6/czpKM1eT07ZiZtzQkV6QB5qerj2nco2yNTsLj/OIX+IDkGCeyawIp/P6dD/+pkTRMQoSWNzzPfHUN7Mr35xCrcwqTfFDs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBxTCCAS6gAwIBAgIQHGiHI9IOtL1Cg99mIN5NtDANBgkqhkiG9w0BAQsFADAhMR8wHQYDVQQDHhYAVwBJAFQAXABoAGEAbgBsAG8AbgBuMB4XDTE0MTAwNzIyMjkyM1oXDTE1MTAwODA0MjkyM1owITEfMB0GA1UEAx4WAFcASQBUAFwAaABhAG4AbABvAG4AbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA0t9VzeQjur/4D0tbTow1Oi8EimHD5bZqlTH0bpw873EjcWaKSNgTb8sv36JpaBeY6h4pB8ewGVmN6/czpKM1eT07ZiZtzQkV6QB5qerj2nco2yNTsLj/OIX+IDkGCeyawIp/P6dD/+pkTRMQoSWNzzPfHUN7Mr35xCrcwqTfFDsCAwEAATANBgkqhkiG9w0BAQsFAAOBgQAvlDeZEBvzAsMHUztbmDxMg7HBQGXafEz+sd2apylC/siN1hidrgvWcvyhy9P2DD3Oej74HWC0RAZfLQ1J8z6/Bi//Bye59NfeNMBMpF5sZfQsVAy3RYeuiMSADl9jxNsQPjHvu4G6imP8Q946gCCkyJLENgCwHVOmTgBCAqMHPQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
