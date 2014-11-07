@@ -32,6 +32,7 @@
             this.ResetPassword = new System.Windows.Forms.Button();
             this.CheckPassExpire = new System.Windows.Forms.Button();
             this.CheckPassLastSet = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ResetPassword
@@ -64,11 +65,22 @@
             this.CheckPassLastSet.UseVisualStyleBackColor = true;
             this.CheckPassLastSet.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(194, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Version 1.1.0.4";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckPassLastSet);
             this.Controls.Add(this.CheckPassExpire);
             this.Controls.Add(this.ResetPassword);
@@ -77,6 +89,7 @@
             this.Name = "Form1";
             this.Text = "Helpdesk Tools";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -85,6 +98,7 @@
         private System.Windows.Forms.Button ResetPassword;
         private System.Windows.Forms.Button CheckPassExpire;
         private System.Windows.Forms.Button CheckPassLastSet;
+        private System.Windows.Forms.Label label1;
     }
 }
 

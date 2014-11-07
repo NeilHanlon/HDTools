@@ -65,5 +65,25 @@ namespace Helpdesk
                 CheckAccount checkAccount = new CheckAccount();
             }
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            TelnetConnection tc = new TelnetConnection("towel.blinkenlights.nl",666);
+            String[] result = tc.Read().Split('\r');
+            int count = 0;
+            foreach(String r in result)
+            {
+                count++;
+            }
+           // Console.WriteLine(result[count-3]);
+            tc.WriteLine("exit");
+            InfoWindow excuse = new InfoWindow();
+            excuse.BringToFront();
+            excuse.Text = "Excuse";
+            excuse.updateInfo(result[count-3], "asdf", "OK");
+            excuse.info_OK.Hide();
+            excuse.Show();
+            excuse.Focus();
+        }
     }
 }
