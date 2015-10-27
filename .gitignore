@@ -1,0 +1,3 @@
+*.pfx
+Helpdesk/bin/Debug/*
+Helpdesk/obj/Debug/*

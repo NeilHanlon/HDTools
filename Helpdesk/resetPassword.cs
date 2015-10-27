@@ -78,7 +78,7 @@ namespace Helpdesk
         public string GetUserDn(string identity)
         {
             var userName = identity;
-            using (var rootEntry = new DirectoryEntry("LDAP://local-dc1.wit.private/DC=wit,DC=private"))
+           /* using (var rootEntry = new DirectoryEntry("LDAP://local-dc1.wit.private/DC=wit,DC=private"))
             {
                 using (var directorySearcher = new DirectorySearcher(rootEntry, String.Format("(sAMAccountName={0})", userName)))
                 {
@@ -92,7 +92,10 @@ namespace Helpdesk
                     }
                 }
             }
-            return null;
+            return null;*/
+            var domain = new PrincipalContext(ContextType.Domain);
+            var user = UserPrincipal.FindByIdentity(domain, userName);
+            return user != null ? user.DistinguishedName : null;
         }
         public Boolean doResetPassword(string userDN)
         {

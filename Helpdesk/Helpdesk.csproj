@@ -27,7 +27,7 @@
     <SuiteName>HDTools</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -53,11 +53,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>20FD0B182E8733617B4EEA5E6BB2F566EFAE7D31</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>72A73AA4F39A2EAE8B1EDED1F9DEF57FAC157FEC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>Helpdesk_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -121,6 +120,12 @@
       <DependentUpon>InfoWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="MinimalisticTelnet.cs" />
+    <Compile Include="MoveComputer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveComputer.Designer.cs">
+      <DependentUpon>MoveComputer.cs</DependentUpon>
+    </Compile>
     <Compile Include="resetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +143,9 @@
     <EmbeddedResource Include="InfoWindow.resx">
       <DependentUpon>InfoWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MoveComputer.resx">
+      <DependentUpon>MoveComputer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -154,6 +162,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="checkPassLastSet.ps1" />
+    <None Include="Helpdesk_1_TemporaryKey.pfx" />
     <None Include="Helpdesk_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

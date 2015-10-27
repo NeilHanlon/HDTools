@@ -17,6 +17,7 @@ namespace Helpdesk
     {
         resetPassword resetPasswordForm = new resetPassword();
         private CheckAccount checkAccount = new CheckAccount();
+        private MoveComputer moveComputer = new MoveComputer();
         public Form1()
         {
             InitializeComponent();
@@ -84,6 +85,18 @@ namespace Helpdesk
             excuse.info_OK.Hide();
             excuse.Show();
             excuse.Focus();
+        }
+
+        private void move_computer_eduroam_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                moveComputer.Show();
+            }
+            catch
+            {
+                MoveComputer moveComputer = new MoveComputer();
+            }
         }
     }
 }

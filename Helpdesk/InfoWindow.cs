@@ -77,6 +77,10 @@ namespace Helpdesk
                 }
                 
             }
+            if(status_code == -50)
+            {
+                this.Hide();
+            }
         }
         private void infowindowCancel_Click(object sender, EventArgs e)
         {

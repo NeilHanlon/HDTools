@@ -18,3 +18,4 @@ C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Deb
 C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Debug\HDTools.exe
 C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Debug\HDTools.pdb
 C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\bin\Debug\helpdesk.ico
+C:\Users\hanlonn\Documents\Visual Studio 2013\Projects\Helpdesk\Helpdesk\obj\Debug\Helpdesk.MoveComputer.resources

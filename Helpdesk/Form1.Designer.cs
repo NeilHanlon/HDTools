@@ -33,6 +33,7 @@
             this.CheckPassExpire = new System.Windows.Forms.Button();
             this.CheckPassLastSet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.move_computer_eduroam = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ResetPassword
@@ -72,14 +73,25 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Version 1.1.0.4";
+            this.label1.Text = "Version 1.1.1.0";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // move_computer_eduroam
+            // 
+            this.move_computer_eduroam.Location = new System.Drawing.Point(139, 124);
+            this.move_computer_eduroam.Name = "move_computer_eduroam";
+            this.move_computer_eduroam.Size = new System.Drawing.Size(97, 61);
+            this.move_computer_eduroam.TabIndex = 4;
+            this.move_computer_eduroam.Text = "Move Computer (EDUROAM)";
+            this.move_computer_eduroam.UseVisualStyleBackColor = true;
+            this.move_computer_eduroam.Click += new System.EventHandler(this.move_computer_eduroam_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.move_computer_eduroam);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckPassLastSet);
             this.Controls.Add(this.CheckPassExpire);
@@ -99,6 +111,7 @@
         private System.Windows.Forms.Button CheckPassExpire;
         private System.Windows.Forms.Button CheckPassLastSet;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button move_computer_eduroam;
     }
 }
 
