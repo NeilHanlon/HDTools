@@ -41,7 +41,7 @@
             this.infowindowCancel.Location = new System.Drawing.Point(349, 85);
             this.infowindowCancel.Name = "infowindowCancel";
             this.infowindowCancel.Size = new System.Drawing.Size(99, 26);
-            this.infowindowCancel.TabIndex = 5;
+            this.infowindowCancel.TabIndex = 2;
             this.infowindowCancel.Text = "Cancel";
             this.infowindowCancel.UseVisualStyleBackColor = true;
             this.infowindowCancel.Click += new System.EventHandler(this.infowindowCancel_Click);
@@ -51,7 +51,7 @@
             this.infowindowOK.Location = new System.Drawing.Point(244, 85);
             this.infowindowOK.Name = "infowindowOK";
             this.infowindowOK.Size = new System.Drawing.Size(99, 26);
-            this.infowindowOK.TabIndex = 4;
+            this.infowindowOK.TabIndex = 1;
             this.infowindowOK.Text = "OK";
             this.infowindowOK.UseVisualStyleBackColor = true;
             this.infowindowOK.Click += new System.EventHandler(this.usernameOK_Click);

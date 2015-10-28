@@ -40,7 +40,7 @@
             this.usernameCancel.Location = new System.Drawing.Point(329, 51);
             this.usernameCancel.Name = "usernameCancel";
             this.usernameCancel.Size = new System.Drawing.Size(99, 26);
-            this.usernameCancel.TabIndex = 7;
+            this.usernameCancel.TabIndex = 2;
             this.usernameCancel.Text = "Cancel";
             this.usernameCancel.UseVisualStyleBackColor = true;
             this.usernameCancel.Click += new System.EventHandler(this.usernameCancel_Click);
@@ -50,7 +50,7 @@
             this.usernameOK.Location = new System.Drawing.Point(329, 19);
             this.usernameOK.Name = "usernameOK";
             this.usernameOK.Size = new System.Drawing.Size(99, 26);
-            this.usernameOK.TabIndex = 6;
+            this.usernameOK.TabIndex = 1;
             this.usernameOK.Text = "OK";
             this.usernameOK.UseVisualStyleBackColor = true;
             this.usernameOK.Click += new System.EventHandler(this.usernameOK_Click);
@@ -69,7 +69,7 @@
             this.usernameText.Location = new System.Drawing.Point(12, 83);
             this.usernameText.Name = "usernameText";
             this.usernameText.Size = new System.Drawing.Size(416, 20);
-            this.usernameText.TabIndex = 4;
+            this.usernameText.TabIndex = 0;
             this.usernameText.TextChanged += new System.EventHandler(this.usernameText_TextChanged);
             // 
             // CheckAccount

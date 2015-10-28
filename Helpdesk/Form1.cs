@@ -34,10 +34,13 @@ namespace Helpdesk
             //Reset Password
             try
             {
+                resetPasswordForm.SetFocus();
                 resetPasswordForm.Show();
             } catch
             {
                 resetPasswordForm = new resetPassword();
+                resetPasswordForm.SetFocus();
+                resetPasswordForm.Show();
             }
         }
 
@@ -50,7 +53,8 @@ namespace Helpdesk
             }
             catch
             {
-                CheckAccount checkAccount = new CheckAccount();
+                checkAccount = new CheckAccount();
+                checkAccount.Show();
             }
         }
 
@@ -63,7 +67,8 @@ namespace Helpdesk
             }
             catch
             {
-                CheckAccount checkAccount = new CheckAccount();
+                checkAccount = new CheckAccount();
+                checkAccount.Show();
             }
         }
 
@@ -95,7 +100,8 @@ namespace Helpdesk
             }
             catch
             {
-                MoveComputer moveComputer = new MoveComputer();
+                moveComputer = new MoveComputer();
+                moveComputer.Show();
             }
         }
     }

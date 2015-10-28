@@ -57,7 +57,7 @@
             this.usernameOK.Location = new System.Drawing.Point(328, 13);
             this.usernameOK.Name = "usernameOK";
             this.usernameOK.Size = new System.Drawing.Size(99, 26);
-            this.usernameOK.TabIndex = 2;
+            this.usernameOK.TabIndex = 1;
             this.usernameOK.Text = "OK";
             this.usernameOK.UseVisualStyleBackColor = true;
             this.usernameOK.Click += new System.EventHandler(this.usernameOK_Click);
@@ -67,7 +67,7 @@
             this.usernameCancel.Location = new System.Drawing.Point(328, 45);
             this.usernameCancel.Name = "usernameCancel";
             this.usernameCancel.Size = new System.Drawing.Size(99, 26);
-            this.usernameCancel.TabIndex = 3;
+            this.usernameCancel.TabIndex = 2;
             this.usernameCancel.Text = "Cancel";
             this.usernameCancel.UseVisualStyleBackColor = true;
             this.usernameCancel.Click += new System.EventHandler(this.usernameCancel_Click);

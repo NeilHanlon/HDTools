@@ -24,86 +24,92 @@ namespace Helpdesk
         public String EmployeeID { get { return employeeID; } }
         public String DistinguishedName { get { return userDN; } }
         public String username { get { return uName; } }
+
+        PrincipalContext ctx = new PrincipalContext(ContextType.Domain);
+        UserPrincipal user = null;
         public resetPassword()
         {
             InitializeComponent();
         }
 
+        public void SetFocus()
+        {
+            this.usernameText.Focus();
+        }
+
         public resetPassword passResetForm { get { return this; } }
         private void resetPassword_Load(object sender, EventArgs e)
         {
-
+            this.usernameText.Clear();
+            this.AcceptButton = this.usernameOK;
+        }
+        public string GetUserDn(string identity)
+        {
+            var userName = identity;
+            var domain = new PrincipalContext(ContextType.Domain);
+            var user = UserPrincipal.FindByIdentity(domain, userName);
+            return user != null ? user.DistinguishedName : null;
         }
 
         public String getPassExpire(string username)
         {
             DateTime PasswordLastSet = DateTime.Now;
-            String fullName = "";
-            using (PowerShell ps = PowerShell.Create())
+            String fullName = null;
+
+            userDN = GetUserDn(username);
+            try
             {
+                user = UserPrincipal.FindByIdentity(ctx, userDN);
 
-                String properties = "PasswordLastSet";
-                ps.AddScript("Get-ADUser " + username + " -Properties " + properties);
-
-                Collection<PSObject> result = ps.Invoke();
-
-                foreach (PSObject outputItem in result)
+                if (user != null)
                 {
-                    if (outputItem != null)
-                    {
-                        PasswordLastSet = (DateTime)outputItem.Properties["PasswordLastSet"].Value;
-                        fullName = outputItem.Properties["Name"].Value.ToString();
-                    }
+                    PasswordLastSet = (DateTime)user.LastPasswordSet;
+                    fullName = user.Name;
                 }
-                Console.WriteLine(PasswordLastSet);
-                Console.WriteLine(fullName);
                 return "Password for " + fullName + " was last set on " + PasswordLastSet.ToString() + ".";
+            }
+            catch 
+            {
+                throw new InvalidUserException("User not found in directory");
             }
         }
 
         private void usernameOK_Click(object sender, EventArgs e)
         {
             this.Hide();
-            userDN = GetUserDn(usernameText.Text);
-            String message = checkPasswordExpire(usernameText.Text);
 
-            InfoWindow showExpireInfo = new InfoWindow();
-            showExpireInfo.status = 1;
-            showExpireInfo.Text = "Password Expiration for " + usernameText.Text;
-            showExpireInfo.messageLabel.Text = message;
-            showExpireInfo.Show();
-            uName = this.usernameText.Text;
+            try
+            {
+                userDN = GetUserDn(usernameText.Text);
+
+                String message = checkPasswordExpire(usernameText.Text);
+
+                InfoWindow showExpireInfo = new InfoWindow();
+                showExpireInfo.status = 1;
+                showExpireInfo.Text = "Password Expiration for " + usernameText.Text;
+                showExpireInfo.messageLabel.Text = message;
+                showExpireInfo.Show();
+                uName = this.usernameText.Text;
+                this.usernameText.Clear();
+            }
+            catch (InvalidUserException ex)
+            {
+                InfoWindow exception = new InfoWindow();
+                exception.status = -50;
+                exception.updateInfo("Something went wrong. The error thrown by the application was: " + ex.Message + "\nPlease try again", "OK", "OK");
+                exception.info_OK.Hide();
+                exception.Show();
+            }
+
             this.usernameText.Clear();
         }
-        public string GetUserDn(string identity)
-        {
-            var userName = identity;
-           /* using (var rootEntry = new DirectoryEntry("LDAP://local-dc1.wit.private/DC=wit,DC=private"))
-            {
-                using (var directorySearcher = new DirectorySearcher(rootEntry, String.Format("(sAMAccountName={0})", userName)))
-                {
-                    var searchResult = directorySearcher.FindOne();
-                    if (searchResult != null)
-                    {
-                        using (var userEntry = searchResult.GetDirectoryEntry())
-                        {
-                            return (string)userEntry.Properties["distinguishedName"].Value;
-                        }
-                    }
-                }
-            }
-            return null;*/
-            var domain = new PrincipalContext(ContextType.Domain);
-            var user = UserPrincipal.FindByIdentity(domain, userName);
-            return user != null ? user.DistinguishedName : null;
-        }
+
         public Boolean doResetPassword(string userDN)
         {
             try
             {
                 string password = "WIT1$";
                 password += employeeID.Substring(3);
-                //Console.WriteLine(password);
                 DirectoryEntry uEntry = new DirectoryEntry("LDAP://local-dc1.wit.private/" + userDN);
                 uEntry.Invoke("SetPassword", new object[] { password });
                 uEntry.Properties["LockOutTime"].Value = 0; //unlock account
@@ -120,28 +126,22 @@ namespace Helpdesk
 
         public String checkPasswordExpire(String userName)
         {
-            using (PowerShell ps = PowerShell.Create())
+            DateTime PasswordLastSet = DateTime.Now;
+            Boolean PasswordNeverExpires = false;
+
+            userDN = GetUserDn(userName);
+            try
             {
-                DateTime PasswordLastSet = DateTime.Now;
-                Boolean PasswordExpired = false;
-                Boolean PasswordNeverExpires = false;
+                user = UserPrincipal.FindByIdentity(ctx, userDN);
 
-                String properties = "PasswordLastSet,PasswordExpired,PasswordNeverExpires,EmployeeID";
-                ps.AddScript("Get-ADUser " + userName + " -Properties " + properties);
-
-                Collection<PSObject> result = ps.Invoke();
-
-                foreach (PSObject outputItem in result)
+                if (user != null)
                 {
-                    if (outputItem != null)
-                    {
-                        PasswordLastSet = (DateTime)outputItem.Properties["PasswordLastSet"].Value;
-                        PasswordExpired = (outputItem.Properties["PasswordExpired"].Value.ToString() == "False") ? false : true;
-                        PasswordNeverExpires = (outputItem.Properties["PasswordNeverExpires"].Value.ToString() == "False") ? false : true;
-                        name = outputItem.Properties["Name"].Value.ToString();
-                        employeeID = outputItem.Properties["EmployeeID"].Value.ToString();
-                    }
+                    PasswordLastSet = (DateTime)user.LastPasswordSet;
+                    PasswordNeverExpires = user.PasswordNeverExpires;
+                    name = user.Name.ToString();
+                    employeeID = user.EmployeeId.ToString();
                 }
+
                 if (PasswordNeverExpires == true)
                 {
                     return "Password for " + name + " never expires.";
@@ -155,9 +155,11 @@ namespace Helpdesk
                     else
                     {
                         DateTime passExpires = PasswordLastSet.AddDays(180);
-                        if (passExpires > DateTime.Now && PasswordExpired)
+                        Console.WriteLine(passExpires);
+                        Console.WriteLine(PasswordLastSet);
+                        if (passExpires < DateTime.Now)
                         {
-                            return "Password for " + name + " has expired.";
+                            return "Password for " + name + " expired on " + passExpires + ".";
                         }
                         else
                         {
@@ -165,6 +167,10 @@ namespace Helpdesk
                         }
                     }
                 }
+            }
+            catch
+            {
+                throw new InvalidUserException("User not found in directory.");
             }
         }
 

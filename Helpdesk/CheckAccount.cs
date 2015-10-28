@@ -27,6 +27,7 @@ namespace Helpdesk
         public CheckAccount()
         {
             InitializeComponent();
+            this.AcceptButton = usernameOK;
         }
 
         private void usernameText_TextChanged(object sender, EventArgs e)
@@ -41,45 +42,68 @@ namespace Helpdesk
             
             if (status_code == 1)
             {
-                String message = resetPass.checkPasswordExpire(usernameText.Text);
                 try
                 {
-                    infoWindow.updateInfo(message, "OK", "OK");
-                    infoWindow.info_OK.Hide();
-                    infoWindow.Show();
+                    String message = resetPass.checkPasswordExpire(usernameText.Text);
+                    try
+                    {
+                        infoWindow.updateInfo(message, "OK", "OK");
+                        infoWindow.info_OK.Hide();
+                        infoWindow.Show();
+                    }
+                    catch
+                    {
+                        InfoWindow infoWindow = new InfoWindow();
+                        infoWindow.Hide();
+                        infoWindow.updateInfo(message, "OK", "OK");
+                        infoWindow.info_OK.Hide();
+                        infoWindow.Show();
+                    }
                 }
-                catch
+                catch (InvalidUserException ex)
                 {
-                    InfoWindow infoWindow = new InfoWindow();
-                    infoWindow.Hide();
-                    infoWindow.updateInfo(message, "OK", "OK");
-                    infoWindow.info_OK.Hide();
-                    infoWindow.Show();
+                    InfoWindow exception = new InfoWindow();
+                    exception.status = -50;
+                    exception.updateInfo("Something went wrong. The error thrown by the application was: " + ex.Message + "\nPlease try again", "OK", "OK");
+                    exception.info_OK.Hide();
+                    exception.Show();
                 }
+
                 this.usernameText.Text = "";
                 usernameText.Focus();
                 return;
             }
             if(status_code == 2)
             {
-                String message = resetPass.getPassExpire(usernameText.Text);
                 try
                 {
-                    infoWindow.updateInfo(message, "OK", "OK");
-                    infoWindow.info_OK.Hide();
-                    infoWindow.Show();
+                    String message = resetPass.getPassExpire(usernameText.Text);
+                    try
+                    {
+                        infoWindow.updateInfo(message, "OK", "OK");
+                        infoWindow.info_OK.Hide();
+                        infoWindow.Show();
+                    }
+                    catch
+                    {
+                        InfoWindow infoWindow = new InfoWindow();
+                        infoWindow.Hide();
+                        infoWindow.updateInfo(message, "OK", "OK");
+                        infoWindow.info_OK.Hide();
+                        infoWindow.Show();
+                    }
+                    this.usernameText.Text = "";
+                    usernameText.Focus();
+                    return;
                 }
-                catch
+                catch (InvalidUserException ex)
                 {
-                    InfoWindow infoWindow = new InfoWindow();
-                    infoWindow.Hide();
-                    infoWindow.updateInfo(message, "OK", "OK");
-                    infoWindow.info_OK.Hide();
-                    infoWindow.Show();
+                    InfoWindow exception = new InfoWindow();
+                    exception.status = -50;
+                    exception.updateInfo("Something went wrong. The error thrown by the application was: " + ex.Message + "\nPlease try again", "OK", "OK");
+                    exception.info_OK.Hide();
+                    exception.Show();
                 }
-                this.usernameText.Text = "";
-                usernameText.Focus();
-                return;
             }
             this.usernameText.Text = "";
             usernameText.Focus();
